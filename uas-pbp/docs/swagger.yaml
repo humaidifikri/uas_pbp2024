@@ -1,0 +1,286 @@
+basePath: /api
+definitions:
+  models.Produk:
+    properties:
+      deskripsi:
+        type: string
+      id:
+        type: integer
+      nama_produk:
+        type: string
+    type: object
+  models.User:
+    properties:
+      id:
+        type: integer
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Membuat API CRUD untuk User dan Produk
+  title: Dokumentasi UAS Pemrograman Berbasis Platform
+  version: "4.0"
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Login user sebelum CRUD di database
+      parameters:
+      - description: Data User
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+      summary: Login User
+      tags:
+      - Login
+  /produk:
+    get:
+      consumes:
+      - application/json
+      description: Melihat list index produk di database
+      parameters:
+      - description: Data Produk
+        in: body
+        name: produk
+        required: true
+        schema:
+          $ref: '#/definitions/models.Produk'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Produk'
+            type: array
+      summary: Get Produk
+      tags:
+      - Produk
+    post:
+      consumes:
+      - application/json
+      description: Membuat produk baru di database
+      parameters:
+      - description: Data Produk
+        in: body
+        name: produk
+        required: true
+        schema:
+          $ref: '#/definitions/models.Produk'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Produk'
+            type: array
+      summary: Create a new produk
+      tags:
+      - Produk
+  /produk/:id:
+    delete:
+      consumes:
+      - application/json
+      description: Menghapus produk di database
+      parameters:
+      - description: Data Produk
+        in: body
+        name: produk
+        required: true
+        schema:
+          $ref: '#/definitions/models.Produk'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Produk'
+            type: array
+      summary: Deleting the produk
+      tags:
+      - Produk
+    get:
+      consumes:
+      - application/json
+      description: Melihat list index berdasarkan ID produk di database
+      parameters:
+      - description: Data Produk
+        in: body
+        name: produk
+        required: true
+        schema:
+          $ref: '#/definitions/models.Produk'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Produk'
+            type: array
+      summary: Select Produk based on ID
+      tags:
+      - Produk
+    put:
+      consumes:
+      - application/json
+      description: Mengubah produk di database
+      parameters:
+      - description: Data Produk
+        in: body
+        name: produk
+        required: true
+        schema:
+          $ref: '#/definitions/models.Produk'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Produk'
+            type: array
+      summary: Edit the produk
+      tags:
+      - Produk
+  /user:
+    get:
+      consumes:
+      - application/json
+      description: Melihat list index user di database
+      parameters:
+      - description: Data User
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+      summary: Get User
+      tags:
+      - User
+    post:
+      consumes:
+      - application/json
+      description: Membuat user baru di database
+      parameters:
+      - description: Data User
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+      summary: Add User
+      tags:
+      - User
+  /user/:id:
+    delete:
+      consumes:
+      - application/json
+      description: Menghapus user di database
+      parameters:
+      - description: Data User
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+      summary: Deleting the User
+      tags:
+      - User
+    get:
+      consumes:
+      - application/json
+      description: Melihat list index user berdasarkan ID di database
+      parameters:
+      - description: Data User
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+      summary: Select User based on ID
+      tags:
+      - User
+    put:
+      consumes:
+      - application/json
+      description: Mengubah user di database
+      parameters:
+      - description: Data User
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+      summary: Edit the user
+      tags:
+      - User
+swagger: "2.0"
